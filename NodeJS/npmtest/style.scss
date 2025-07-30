@@ -1,0 +1,9 @@
+$myColor: #ffff;
+
+.a{
+    .nested{
+        .selector{
+            color: $myColor;
+        }
+    }
+}
