@@ -2,29 +2,26 @@
   <div class="profile-container">
     <div class="profile">
       <img src="https://www.nme.com/wp-content/uploads/2025/03/red-velvet-seulgi-accidentally-on-purpose-baby-not-baby-music-video-solo-album.jpg" alt="Profile Picture" class="ui small image">
-      <h2>User Profile:</h2>
+      <h2>About me</h2>
       <ul>
         <li>
           <strong>Name: </strong>
-          <input v-if="isEditing" v-model="editName" class="profile-input" />
-          <span v-else>{{ name }}</span>
+          <span>{{ name }}</span>
         </li>
         <li>
-          <strong>Date Joined: </strong> {{ dateJoined }}
+          <strong>Student ID: </strong> {{ studentId }}
         </li>
         <li>
-          <strong>Language: </strong>
-          <select v-if="isEditing" v-model="editLanguage" class="profile-select">
-            <option value="English">English</option>
-            <option value="Korean">Korean</option>
-            <option value="German">German</option>
-          </select>
-          <span v-else>{{ language }}</span>
+          <strong>The system was completed on: </strong> {{ dateDoned }}
+        </li>
+        <li>
+          <strong>Language study: </strong>
+          <span>{{ language }}</span>
+        </li>
+        <li>
+          <i class="envelope icon"></i><strong>Contact Me: </strong> {{ email }}
         </li>
       </ul>
-      <button v-if="!isEditing" class="ui button" @click="startEdit">Edit</button>
-      <button v-if="isEditing" class="ui button" @click="saveEdit">Save</button>
-      <button v-if="isEditing" class="ui button" @click="cancelEdit">Cancel</button>
     </div>
   </div>
 </template>
@@ -34,27 +31,11 @@ export default {
   name: 'Heulwen',
   data() {
     return {
-      name: 'Han Nguyen',
-      dateJoined: '27th Jul 2025',
-      language: 'Korean',
-      isEditing: false,
-      editName: '',
-      editLanguage: ''
-    }
-  },
-  methods: {
-    startEdit() {
-      this.isEditing = true;
-      this.editName = this.name;
-      this.editLanguage = this.language;
-    },
-    saveEdit() {
-      this.name = this.editName;
-      this.language = this.editLanguage;
-      this.isEditing = false;
-    },
-    cancelEdit() {
-      this.isEditing = false;
+      name: 'Nguyen Ngoc Gia Han',
+      studentId: '001362463',
+      dateDoned: '1st Aug 2025',
+      language: 'English/Korean',
+      email: 'hannnggcs230054@fpt.edu.vn'
     }
   }
 }
@@ -117,25 +98,8 @@ export default {
   padding: 0.3em 1em;
   margin-left: 0.5em;
 }
-.ui.button{
-  margin-top: 1em;
-  margin-right: 0.5em;
-  background-color: #5F4B8B;
-  color: #E0E0E0;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
-}
 
-.ui.button:focus {
-  background-color: #5F4B8B;
-  color: #E0E0E0;
-}
-
-.ui.button:hover {
-  background-color: #7F5AF0;
-  color: #E0E0E0;
-  text-shadow: 0 0 5px rgba(224, 224, 224, 0.5);
+.envelope.icon {
+  color: #D4AF37;
 }
 </style>
