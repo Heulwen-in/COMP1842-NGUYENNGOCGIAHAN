@@ -37,7 +37,8 @@
        default: () => {
         return {
             english: '',
-            german: ''
+            german: '',
+            korean: ''
         };
        }
      }
@@ -49,7 +50,7 @@
    },
    methods: {
      onSubmit: function() {
-       if (this.word.english === '' || this.word.german === '') {
+       if (this.word.english === '' || this.word.german === '' || this.word.korean === '') {
         this.errorsPresent = true;
        } else {
         this.$emit('create0rUpdate', this.word);
