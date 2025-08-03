@@ -165,7 +165,7 @@ input {
   color: #27ae60;
 }
 .incorrect {
-  color: #e74c3c;
+  color: red;
 }
 .score {
   margin-top: 1em;
