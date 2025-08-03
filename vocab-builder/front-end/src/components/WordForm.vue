@@ -1,6 +1,6 @@
 <template>
   <form action="#" @submit.prevent="onSubmit">
-     <p v-if="errorsPresent" class="error">Please fill all fields!</p>
+     <p v-if="errorsPresent" class="error-message">Please fill all fields!</p>
  
      <div class="ui labeled input fluid">
        <div class="ui label">
@@ -61,4 +61,8 @@
  </script>
  
  <style>
- </style>
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+</style>
